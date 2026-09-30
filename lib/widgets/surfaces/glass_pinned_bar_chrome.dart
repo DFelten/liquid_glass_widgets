@@ -433,8 +433,6 @@ class _GlassPinnedBarChromeState extends State<GlassPinnedBarChrome> {
                 bodyMode: GlassBodyMode.clear,
               )
             : null;
-        // Sized like the pinned cluster, so the bar keeps its shape when the
-        // shell hands it back, e.g. while a sheet is presented over the route.
         return GlassButtonGroup.icons(
           platformViewBackdrop: widget.platformViewBackdrop,
           settings: groupSettings,
