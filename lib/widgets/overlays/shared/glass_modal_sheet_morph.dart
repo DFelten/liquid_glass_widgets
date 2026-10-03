@@ -831,7 +831,6 @@ class GlassSheetMorphPresenter extends StatefulWidget {
     required this.halfSettings,
     required this.fullSettings,
     required this.expandedColor,
-    this.expandedDarkColor,
     required this.quality,
     required this.peekHorizontalMargin,
     required this.peekBottomMargin,
@@ -839,6 +838,7 @@ class GlassSheetMorphPresenter extends StatefulWidget {
     required this.peekTopBorderRadius,
     required this.platformViewBackdrop,
     required this.child,
+    this.expandedDarkColor,
     this.barrierColor,
   });
 
