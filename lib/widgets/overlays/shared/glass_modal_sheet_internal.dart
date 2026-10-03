@@ -753,6 +753,9 @@ class GlassModalSheetScaffold extends StatelessWidget {
   /// Background color used when the sheet is fully expanded and opaque.
   final Color? expandedColor;
 
+  /// [expandedColor] while the glass brightness is dark.
+  final Color? expandedDarkColor;
+
   /// Rendering quality (BackdropFilter vs Shader). Defaults to standard.
   final GlassQuality? quality;
 
@@ -886,6 +889,7 @@ class GlassModalSheetScaffold extends StatelessWidget {
     this.fillThreshold = 0.85,
     this.settings,
     this.expandedColor,
+    this.expandedDarkColor,
     this.controller,
     this.onStateChanged,
     this.mode = GlassSheetMode.dismissible,
@@ -957,6 +961,7 @@ class GlassModalSheetScaffold extends StatelessWidget {
           fillThreshold: fillThreshold,
           settings: settings,
           expandedColor: expandedColor,
+          expandedDarkColor: expandedDarkColor,
           controller: controller,
           onStateChanged: onStateChanged,
           mode: mode,
