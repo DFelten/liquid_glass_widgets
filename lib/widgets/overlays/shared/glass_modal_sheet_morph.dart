@@ -1676,8 +1676,12 @@ class _GlassSheetMorphPresenterState extends State<GlassSheetMorphPresenter>
     );
 
     final isDark = GlassTheme.brightnessOf(context) == Brightness.dark;
-    final fillColor = widget.expandedColor ??
-        (isDark ? const Color(0xFF1C1C1E) : CupertinoColors.white);
+    final fillColor = switch (widget.expandedColor) {
+      final CupertinoDynamicColor color =>
+        isDark ? color.darkColor : color.color,
+      final Color color => color,
+      null => isDark ? const Color(0xFF1C1C1E) : CupertinoColors.white,
+    };
 
     // Radii the droplet resolves to: the sheet's own resting corners.
     final targetTopRadius = switch (widget.restingState) {

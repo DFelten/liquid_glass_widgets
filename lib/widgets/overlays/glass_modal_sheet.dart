@@ -118,6 +118,9 @@ class GlassModalSheet extends StatefulWidget {
   final LiquidGlassSettings? settings;
 
   /// Background color used when the sheet is fully expanded and opaque.
+  ///
+  /// A [CupertinoDynamicColor] is resolved against [GlassTheme.brightnessOf]
+  /// on every build, so an open sheet follows a light/dark switch.
   final Color? expandedColor;
 
   /// Rendering quality (BackdropFilter vs Shader). Defaults to standard.
