@@ -112,7 +112,6 @@ class GlassChip extends StatelessWidget {
     this.interactionScale = 1.03,
     this.stretch = 0.3,
     this.glowRadius = 0.8,
-    this.ambientBaseLight,
     this.anchorStretch = true,
     this.anchorStretchSettings = const AnchorStretchSettings(),
     this.focusNode,
@@ -254,11 +253,6 @@ class GlassChip extends StatelessWidget {
   /// Defaults to 0.8 (subtle glow for chips).
   final double glowRadius;
 
-  /// Opacity of the even brightening while the chip is pressed.
-  ///
-  /// Forwarded to [GlassButton.ambientBaseLight]; null keeps its default.
-  final double? ambientBaseLight;
-
   /// Whether to anchor the chip in place while stretching toward the finger.
   ///
   /// Defaults to `true`. See [GlassButton.anchorStretch].
@@ -373,7 +367,6 @@ class GlassChip extends StatelessWidget {
           interactionScale: effectiveInteractionScale,
           stretch: effectiveStretch,
           glowRadius: glowRadius,
-          ambientBaseLight: ambientBaseLight,
           glowColor: selected
               ? (selectedColor ?? defaultSelectedColor)
               : defaultGlowUnselected,
