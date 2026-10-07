@@ -1,5 +1,6 @@
 // ignore: unnecessary_import
 import 'dart:ui';
+import 'package:liquid_glass_widgets/widgets/interactive/glass_button.dart';
 import 'package:liquid_glass_widgets/widgets/interactive/glass_chip.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -145,6 +146,21 @@ void main() {
       expect(chip.interactionScale, equals(1.03));
       expect(chip.stretch, equals(0.3));
       expect(chip.glowRadius, equals(0.8));
+      expect(chip.ambientBaseLight, isNull);
+    });
+
+    testWidgets('forwards ambientBaseLight to its GlassButton', (tester) async {
+      await tester.pumpWidget(
+        createTestApp(
+          child: AdaptiveLiquidGlassLayer(
+            settings: defaultTestGlassSettings,
+            child: GlassChip(label: 'Dimmed', ambientBaseLight: 0.1),
+          ),
+        ),
+      );
+
+      final button = tester.widget<GlassButton>(find.byType(GlassButton));
+      expect(button.ambientBaseLight, equals(0.1));
     });
 
     group('keyboard focus & accessibility', () {
